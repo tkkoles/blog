@@ -1,19 +1,13 @@
-
-<p>
-  <strong>Tytuł:</strong>
-  <%= @article.title %>
-</p>
+<h2><%= @article.title %></h2>
  
-<p>
-  <strong>Tekst:</strong>
-  <%= @article.text %>
-</p>
+<p><%= @article.text %></p>
+
+<hr>
  
 <h2>Komentarze</h2>
 <%= render @article.comments %>
+
+<hr>
  
 <h2>Dodaj komentarz:</h2>
 <%= render 'comments/form' %>
- 
-<%= link_to 'Edytuj', edit_article_path(@article) %> |
-<%= link_to 'Wróć', articles_path %>
