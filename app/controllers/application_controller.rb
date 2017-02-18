@@ -1,3 +1,9 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  before_action :fetch_all_articles
+  protect_from_forgery prepend: true
+
+
+	def fetch_all_articles
+	  @articles = Article.all
+	end
 end
